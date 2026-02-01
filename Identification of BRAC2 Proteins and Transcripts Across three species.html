@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-12-06 Sat 22:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital Biology</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Tripathi Subina" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Digital Biology</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0774003">1. <b>Identification of BRAC2 Proteins and Transcripts Across Nasalis larvatus, Plecturocebus cupreus, Sanguius oedipus and Homo Sapiens</b></a>
+<ul>
+<li><a href="#orge33407e">1.1. SUBINA TRIPATHI</a></li>
+<li><a href="#orgf4431e9">1.2. <b>DB0004</b></a></li>
+<li><a href="#orgcae940d">1.3. Project outline</a></li>
+<li><a href="#orgd6897bc">1.4. Introduction</a>
+<ul>
+<li><a href="#org344147f">1.4.1. About the dataset</a></li>
+<li><a href="#org1c427cf">1.4.2. About the pipeline used</a></li>
+<li><a href="#orgeee1df3">1.4.3. About experimental rationale</a></li>
+</ul>
+</li>
+<li><a href="#org31374d4">1.5. Methods and Results</a>
+<ul>
+<li><a href="#orgecf2540">1.5.1. Methods</a></li>
+<li><a href="#org841ce9a">1.5.2. Results</a></li>
+<li><a href="#org067e1e7">1.5.3. Step01: BLASTp analysis for BRCA2 protein</a></li>
+<li><a href="#org29d5a0b">1.5.4. Step02: Transcript extraction and genomic mapping of BRCA2 CDS</a></li>
+<li><a href="#orgcbe7a3f">1.5.5. Data Tables</a></li>
+<li><a href="#org8c32f6d">1.5.6. Figures</a></li>
+</ul>
+</li>
+<li><a href="#org095b4c5">1.6. Script 01</a>
+<ul>
+<li><a href="#org5396d71">1.6.1. Making BLASTp databases</a></li>
+</ul>
+</li>
+<li><a href="#org0f7873a">1.7. Script 02</a>
+<ul>
+<li><a href="#org42b6b65">1.7.1. Run BLASTP with the Evalues</a></li>
+<li><a href="#org0367bcf">1.7.2. Databases used</a></li>
+</ul>
+</li>
+<li><a href="#org3823d6a">1.8. Script 3</a>
+<ul>
+<li><a href="#orgb43b040">1.8.1. Run BLASTN for CDS analysis</a></li>
+<li><a href="#orgc6a924b">1.8.2. Databases used</a></li>
+</ul>
+</li>
+<li><a href="#orgcc0bb97">1.9. Discussion</a></li>
+<li><a href="#orgec6efc6">1.10. Conclusions</a></li>
+<li><a href="#org3bbb324">1.11. References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0774003" class="outline-2">
+<h2 id="org0774003"><span class="section-number-2">1</span> <b>Identification of BRAC2 Proteins and Transcripts Across Nasalis larvatus, Plecturocebus cupreus, Sanguius oedipus and Homo Sapiens</b></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orge33407e" class="outline-3">
+<h3 id="orge33407e"><span class="section-number-3">1.1</span> SUBINA TRIPATHI</h3>
+</div>
+<div id="outline-container-orgf4431e9" class="outline-3">
+<h3 id="orgf4431e9"><span class="section-number-3">1.2</span> <b>DB0004</b></h3>
+</div>
+
+<div id="outline-container-orgcae940d" class="outline-3">
+<h3 id="orgcae940d"><span class="section-number-3">1.3</span> Project outline</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+This project aims to identify BRCA2-related proteins across four species 
+Nasalis larvatus, Plecturocebus cupreus, Saguinus oedipus, and Homo sapiens (positive control). 
+The workflow begins with BLASTp searches using the human BRCA2 
+protein sequence against the predicted protein sets of all four genomes to identify 
+possible BRCA2-like polypeptides.
+</p>
+
+<p>
+After BRCA2 proteins are identified, their corresponding transcript IDs was 
+retrieved from the GTF annotation files. Because this analysis is based 
+on protein queries, transcript analysis depends on the presence of annotated CDS 
+features in the GTF. Any transcripts found was then used with BLASTN to locate 
+their corresponding genomic regions and identify conserved BRCA2 loci within each genome.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd6897bc" class="outline-3">
+<h3 id="orgd6897bc"><span class="section-number-3">1.4</span> Introduction</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Breast Cancer Type 2 Susceptibility Protein (BRAC 2) is an essential DNA-repair gene that maintains 
+genome stability through its role in homologous recombination (Venkitaraman 2002). Because BRCA2
+function is highly conserved across mammals, comparative genomic studies have increasingly examined
+how BRCA2 structure and exon organization vary among species to better understand evolutionary constraints
+and functional domains (Zhang et al. 2011; Kowalczyk et al. 2020). Previous research has shown that
+although the BRCA2 protein is conserved, several primate genomes contain incomplete, fragmented, or poorly
+annotated BRCA2 regions due to assembly gaps or annotation limitations (Chen et al. 2017). These issues make
+cross-species comparison valuable for improving gene annotation and understanding BRCA2 evolution.
+</p>
+
+<p>
+In this project, we perform a systematic comparative analysis of BRCA2 across four species—Homo sapiens, 
+Nasalis larvatus, Saguinus oedipus, and Plecturocebus cupreus using BLASTp, gene annotation files, CDS extraction, 
+and BLASTn-based genomic mapping. Our goal is to identify BRCA2 orthologs, evaluate their conservation, and determine whether the gene is fully represented, fragmented, or missing 
+in each assembly. By using the human BRCA2 protein as a reference and mapping CDS back 
+to each species genome, this analysis helps verify gene presence, detect structural differences, and highlight 
+annotation gaps—an approach commonly used in evolutionary genomics and functional gene validation.
+</p>
+</div>
+
+<div id="outline-container-org344147f" class="outline-4">
+<h4 id="org344147f"><span class="section-number-4">1.4.1</span> About the dataset</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+This project analyzes BRCA2-related sequences across four primate species using protein and genome datasets.
+</p>
+
+<p>
+<b>Homo sapiens</b> <b>(positive control)</b>
+</p>
+<ul class="org-ul">
+<li>Source: GRCh38 human reference genome</li>
+<li>Protein FASTA: <code>Homo_sapiens.GRCh38.pep.all.fa</code></li>
+<li>Genome FASTA: <code>Homo_sapiens.GRCh38.dna.chromosome.13.fa</code></li>
+<li>BLASTp database folder: <code>01_Homo_sapiens_DB/</code></li>
+<li>BRCA2 protein query: <code>ENSP00000518983.1.fa</code></li>
+</ul>
+
+<p>
+<b>Nasalis larvatus</b>
+</p>
+<ul class="org-ul">
+<li>Source: <code>GCA_047834645.1 (ASM4783464v1)</code></li>
+<li>Protein FASTA: <code>Nasalis_larvatus_protein.faa</code></li>
+<li>Genome FASTA: <code>GCA_047834645.1_ASM4783464v1_genomic.fna</code></li>
+<li>BLASTp database folder: <code>02_Nasalis_larvatus_DB/</code></li>
+</ul>
+
+<p>
+<b>Saguinus oedipus</b>
+</p>
+<ul class="org-ul">
+<li>Source: <code>GCA_031835075.1 (ASM3183507v1)</code></li>
+<li>Protein FASTA: <code>Saguinus_oedipus_protein.faa</code></li>
+<li>Genome FASTA: <code>GCA_031835075.1_ASM3183507v1_genomic.fna</code></li>
+<li>BLASTp database folder: <code>03_Saguinus_oedipus_DB/</code></li>
+</ul>
+
+<p>
+<b>Plecturocebus cupreus</b> <b>(protein level only)</b>
+</p>
+<ul class="org-ul">
+<li>Source: <code>GCA_040437455.1</code></li>
+<li>Protein FASTA: <code>Plecturocebus_cupreus_protein.faa</code></li>
+<li>BLASTp database folder: <code>04_Plecturocebus_cupreus_DB/</code></li>
+</ul>
+
+<p>
+Plecturocebus cupreus did not produce a BRCA2-like BLASTp hit, therefore no transcript extraction, CDS analysis, or BLASTn mapping was performed.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1c427cf" class="outline-4">
+<h4 id="org1c427cf"><span class="section-number-4">1.4.2</span> About the pipeline used</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+The pipeline follows 3 steps:
+</p>
+
+<ol class="org-ol">
+<li><b>BLASTp search (protein level)</b>:  
+The human BRCA2 protein sequence was used as the reference query against the predicted protein sets from each species.  
+This step identified potential BRCA2 homologs based on sequence similarity and alignment statistics.</li>
+
+<li><b>Transcript and CDS identification (annotation level)</b>:  
+Protein hits were matched to their corresponding transcripts using GTF/GFF annotation files.  
+This step enabled extraction of the coding sequences (CDS) and provided information on exon structure and completeness.</li>
+
+<li><b>Genomic mapping using BLASTn (genome level)</b>:  
+The extracted CDS sequences were aligned to each species’ genome using BLASTn.  
+Genomic hits were visualized in IGV to confirm exon organization and BRCA2 locus completeness.</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgeee1df3" class="outline-4">
+<h4 id="orgeee1df3"><span class="section-number-4">1.4.3</span> About experimental rationale</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+The main goal of this project is to determine whether BRCA2-related proteins can be 
+identified across four primate species. BRCA2 is an important gene involved in DNA 
+repair, and detecting similar proteins in other species provides information into how 
+conserved this gene is across evolution.
+</p>
+
+<p>
+A protein-based approach was used because protein sequences are more conserved than 
+nucleotide sequences, making BLASTp more effective for identifying distant homologs. 
+Once a BRCA2-like protein is identified, annotation files such as GTFs help determine 
+whether the gene and its transcripts are recorded in the species’ genome assembly. 
+Finally, aligning the protein back to the genome using BLASTN allows the BRCA2 region 
+to be located, helping us understand the organization and conservation of this gene 
+in each species.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org31374d4" class="outline-3">
+<h3 id="org31374d4"><span class="section-number-3">1.5</span> Methods and Results</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-orgecf2540" class="outline-4">
+<h4 id="orgecf2540"><span class="section-number-4">1.5.1</span> Methods</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li><b><b>Preparation of protein databases</b></b> 
+<ul class="org-ul">
+<li>Protein FASTA files for Homo sapiens, Nasalis larvatus, Saguinus oedipus, and Plecturocebus cupreus were collected and converted into BLASTp-searchable databases using the makeblastdb command (-dbtype prot). This allowed protein–protein comparisons across species.</li>
+</ul></li>
+
+<li><b><b>Query sequence</b></b>
+<ul class="org-ul">
+<li>The human BRCA2 protein sequence (ENSP00000518983.1) was downloaded from PEP file and used as the query for all BLASTp searches.This sequence served as the basis for identifying BRCA2-like proteins in the other primates.</li>
+</ul></li>
+
+<li><b><b>BLASTp search</b></b>
+<ul class="org-ul">
+<li>BLASTp was run with default parameters to compare the human BRCA2 protein against each species protein database. The goal was to identify BRCA2-like proteins based on sequence similarity, alignment score, and E-value.</li>
+</ul></li>
+
+<li><b><b>Transcript and genome annotation</b></b>  
+<ul class="org-ul">
+<li>For each BLASTp hit, the species GFF annotation file was searched to identify the associated transcript and its CDS. Using the BLASTp-identified protein as a reference, the BRCA2 CDS was extracted from each species CDS FASTA file. These CDS sequences were then used as BLASTn queries to determine where the BRCA2 gene is located within each species genome.</li>
+</ul></li>
+
+<li><b><b>Genomic localization of BRCA2 using BLASTn and IGV</b></b>
+<ul class="org-ul">
+<li>Each species genome FASTA file (.fna) was linked into the working directory and converted into a nucleotide BLAST database. The extracted BRCA2 CDS sequences were then aligned back to their respective genomes using BLASTn to locate the scaffold or chromosome containing the BRCA2 region. BLASTn output was converted into BED files and loaded into IGV, where the genomic position and conservation of BRCA2 were visually compared across species.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org841ce9a" class="outline-4">
+<h4 id="org841ce9a"><span class="section-number-4">1.5.2</span> Results</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<p>
+<b>1. BLASTp hit summary</b>
+</p>
+
+
+<p>
+BLASTp searches using the human BRCA2 protein (ENSP00000518983.1) detected
+BRCA2-like polypeptides in three of the four species analyzed. For each species,
+the best hit (lowest E-value) was used to summarize similarity. Percent identity,
+alignment length, and E-value were used to assess how closely each predicted
+protein resembles the human BRCA2 sequence.
+</p>
+
+<ul class="org-ul">
+<li><b>For Homo sapiens:</b>  
+In <b>Homo sapiens</b>, BRCA2 was recovered with a perfect alignment showing 100%
+identity and full-length coverage of 3366 amino acids, with an E-value of 0.0.
+This confirms the presence of the complete BRCA2 protein and validates the
+BLASTp search setup.</li>
+
+<li><b>For Nasalis larvatus:</b>  
+In <b>Nasalis larvatus</b>, a strong BRCA2 homolog was detected, showing 90.829%
+identity across a 3424 amino acid alignment, with an E-value of 0.0. This
+indicates that BRCA2 is highly conserved in this species and that the predicted
+protein set contains a full-length BRCA2 gene.</li>
+
+<li><b>For Saguinus oedipus:</b>  
+In <b>Saguinus oedipus</b>, BLASTp detected BRCA2-like regions with a top hit
+showing 87.317% identity across a 205 amino acid segment, with an E-value of
+1.52e-113. These shorter alignments suggest that the BRCA2 region is only
+partially represented, likely due to incomplete or fragmented protein
+annotation in this genome.</li>
+
+<li><b>For Plecturocebus cupreus:</b>  
+No BLASTp hits were detected at any E-value, likely due to missing or
+incomplete BRCA2 annotation in the predicted protein set rather than
+biological absence. Further BLASTN searches against the genome may be
+required to recover the BRCA2 region.</li>
+</ul>
+
+
+<p>
+<b>2. BRCA2 CDS extraction and annotation summary</b>
+</p>
+
+
+<p>
+After identifying the BRCA2-like proteins using BLASTp, the corresponding CDS
+features were located in each species annotation files (GFF + CDS FASTA). Using
+the protein IDs, full CDS sequences were successfully extracted for three species:
+</p>
+
+<ul class="org-ul">
+<li><b>Homo sapiens (ENSP00000518983.1):</b>  
+The CDS corresponding to the human BRCA2 transcript (ENST00000713680.1) was
+recovered in full, confirming the integrity of the annotation. The extracted
+FASTA file was saved as: <code>BRCA2_Homo_ENSP00000518983.1_cds.fa</code>.</li>
+
+<li><b>Nasalis larvatus (KAL4838279.1):</b>  
+The BRCA2-like protein was traced to scaffold <code>CM106352.1</code>. Multiple CDS
+entries were identified spanning ~25 exon regions. The complete predicted
+BRCA2 CDS was extracted and saved as:
+<code>BRCA2_Nasalis_KAL4838279.1_cds.fa</code>.</li>
+
+<li><b>Saguinus oedipus (KAK2112680.1):</b>  
+CDS features were located on scaffold <code>CM063173.1</code>. The extracted sequence
+represented a partial BRCA2 CDS, consistent with the shorter BLASTp
+alignment. The FASTA file was saved as:
+<code>BRCA2_Saguinus_KAK2112680.1_cds.fa</code>.</li>
+
+<li><b>Plecturocebus cupreus:</b>  
+No CDS sequence could be extracted because no BRCA2-like protein was detected
+in the BLASTp search. This suggests incomplete genome annotation.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org067e1e7" class="outline-4">
+<h4 id="org067e1e7"><span class="section-number-4">1.5.3</span> Step01: BLASTp analysis for BRCA2 protein</h4>
+<div class="outline-text-4" id="text-1-5-3">
+</div>
+<ol class="org-ol">
+<li><a id="org8a7e152"></a>Step01A: Preparing protein databases<br />
+<div class="outline-text-5" id="text-1-5-3-1">
+<ul class="org-ul">
+<li>Protein FASTA files for all four species were downloaded and converted into BLASTp
+databases using the 'makeblastdb' command with the '-dbtype prot' option.</li>
+<li>Four directories were created:
+<code>01_Homo_sapiens_DB,</code>
+<code>02_Nasalis_larvatus_DB,</code>
+<code>03_Saguinus_oedipus_DB,</code>
+<code>04_Plecturocebus_cupreus_DB</code></li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgb9bb334"></a>Step01B: Running BLASTp<br />
+<div class="outline-text-5" id="text-1-5-3-2">
+<ul class="org-ul">
+<li>The human BRCA2 protein sequence (ENSP00000518983.1.fa) was used as the query.</li>
+<li>BLASTp was run against each species' protein database to identify proteins with
+similarity to the human BRCA2 sequence.</li>
+<li>Alignment scores, percent identity, and E-values were recorded for the top hits.</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org42f19a5"></a>Step01C: Processing BLASTp results<br />
+<div class="outline-text-5" id="text-1-5-3-3">
+<ul class="org-ul">
+<li>BLASTp output files (outfmt 0 and 6) were examined to identify the best BRCA2-like protein in each
+species.</li>
+<li>Protein IDs and their percent identity, alignment length, and E-value were extracted for transcript and genome analyses.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org29d5a0b" class="outline-4">
+<h4 id="org29d5a0b"><span class="section-number-4">1.5.4</span> Step02: Transcript extraction and genomic mapping of BRCA2 CDS</h4>
+<div class="outline-text-4" id="text-1-5-4">
+</div>
+<ol class="org-ol">
+<li><a id="org16fb984"></a>Step02A: Identifying BRCA2 CDS from annotation files<br />
+<div class="outline-text-5" id="text-1-5-4-1">
+<ul class="org-ul">
+<li>For each top BLASTp hit, the corresponding species GFF annotation file was searched using the protein ID (ENSP00000518983.1, KAL4838279.1, KAK2112680.1) to find the associated gene, transcript, and CDS features.</li>
+<li>These GFF entries were used to record the scaffold/chromosome name, strand, and exon coordinates for the BRCA2-like gene in each species.</li>
+<li><p>
+Using the protein IDs as keys, the BRCA2 CDS was extracted from each species’ CDS FASTA file:
+</p>
+<ul class="org-ul">
+<li>Homo sapiens: <code>Homo_sapiens.GRCh38.cds.all.fa</code></li>
+<li>Nasalis larvatus: <code>GCA_047834645.1_ASM4783464v1_cds_from_genomic.fna</code></li>
+<li>Saguinus oedipus: <code>GCA_031835075.1_ASM3183507v1_cds_from_genomic.fna</code></li>
+</ul>
+
+<p>
+These CDS regions were saved as:
+</p>
+<ul class="org-ul">
+<li><code>BRCA2_Homo_ENSP00000518983.1_cds.fa</code> (Homo sapiens)</li>
+<li><code>BRCA2_Nasalis_KAL4838279.1_cds.fa</code> (Nasalis larvatus)</li>
+<li><code>BRCA2_Saguinus_KAK2112680.1_cds.fa</code> (Saguinus oedipus)</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org76c15a0"></a>Step02B: Building genomic BLASTn databases<br />
+<div class="outline-text-5" id="text-1-5-4-2">
+<ul class="org-ul">
+<li>Genomic FASTA files (.fna) for each species were linked into the working directory (<code>Homo_sapiens_genomic_chr13.fa</code>, <code>Nasalis_larvatus_genomic.fa</code>, <code>Saguinus_oedipus_genomic.fa</code>) using symbolic links (`ln -s`).</li>
+<li>These genome FASTA files were converted into nucleotide BLAST databases using `makeblastdb` with `-dbtype nucl`, producing:
+<ul class="org-ul">
+<li><code>Homo_sapiens_chr13_db</code></li>
+<li><code>Nasalis_larvatus_genome.fa_db</code></li>
+<li><code>Saguinus_oedipus_genome.fa_db</code></li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org30fda03"></a>Step02C: BLASTn mapping and IGV visualization<br />
+<div class="outline-text-5" id="text-1-5-4-3">
+<ul class="org-ul">
+<li>Each BRCA2 CDS FASTA file was used as a BLASTn query against the appropriate genome database to determine the BRCA2 genomic locus for each species.</li>
+<li>BLASTn results were generated in tabular format (outfmt 6), sorted, and converted into BED files (<code>sorted_*Run_12*.bed</code>) to capture genomic coordinates of high-scoring alignments.</li>
+<li>Genome FASTA files and the BED tracks were transferred to Windows using `rsync` and loaded into IGV.</li>
+<li>In IGV, the BRCA2 region was inspected on:
+
+<ul class="org-ul">
+<li>Human chromosome 13 (full BRCA2 locus)</li>
+<li>Nasalis larvatus scaffold CM106352.1</li>
+<li>Saguinus oedipus scaffold CM063173., to visually compare BRCA2 genomic structure across species.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+
+<div id="outline-container-orgcbe7a3f" class="outline-4">
+<h4 id="orgcbe7a3f"><span class="section-number-4">1.5.5</span> Data Tables</h4>
+<div class="outline-text-4" id="text-1-5-5">
+</div>
+<ol class="org-ol">
+<li><a id="orgf0ce723"></a>Table01<br />
+<div class="outline-text-5" id="text-1-5-5-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Species Name</th>
+<th scope="col" class="org-left">Accession</th>
+<th scope="col" class="org-right">% identity</th>
+<th scope="col" class="org-right">Aligment length</th>
+<th scope="col" class="org-right">Low E-value</th>
+<th scope="col" class="org-left">E- value threshold detected</th>
+<th scope="col" class="org-left">Hit deteced</th>
+<th scope="col" class="org-left">Notes</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Homo sapiens</td>
+<td class="org-left">ENSP00000518983.1</td>
+<td class="org-right">100%</td>
+<td class="org-right">3366</td>
+<td class="org-right">0.0</td>
+<td class="org-left">1e-001 to 1e-300</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Very strong aligment</td>
+</tr>
+
+<tr>
+<td class="org-left">Nasalis larvatus</td>
+<td class="org-left">KAL4838279.1</td>
+<td class="org-right">90.829%</td>
+<td class="org-right">3424</td>
+<td class="org-right">0.0</td>
+<td class="org-left">1e-001 to 1e-300</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Strong aligment</td>
+</tr>
+
+<tr>
+<td class="org-left">Saguinus oedipus</td>
+<td class="org-left">KAK2112680.1</td>
+<td class="org-right">87.3.0%</td>
+<td class="org-right">205</td>
+<td class="org-right">1.52e-113</td>
+<td class="org-left">1e-100</td>
+<td class="org-left">Yes</td>
+<td class="org-left">Fragment BRAC2 hi</td>
+</tr>
+
+<tr>
+<td class="org-left">Plecturocebus cupreus</td>
+<td class="org-left">-</td>
+<td class="org-right">-</td>
+<td class="org-right">-</td>
+<td class="org-right">-</td>
+<td class="org-left">-</td>
+<td class="org-left">No</td>
+<td class="org-left">No hit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org8c32f6d" class="outline-4">
+<h4 id="org8c32f6d"><span class="section-number-4">1.5.6</span> Figures</h4>
+<div class="outline-text-4" id="text-1-5-6">
+</div>
+<ol class="org-ol">
+<li><a id="org5f0919b"></a>Figure 1: BLASTp alignment for Homo sapiens (positive control)<br />
+<div class="outline-text-5" id="text-1-5-6-1">
+<ul class="org-ul">
+<li>This figure shows the BLASTp alignment between the human BRCA2 protein (ENSP00000518983.1)
+and the human protein database, confirming 100% identity and serving as the positive control.</li>
+</ul>
+
+<pre class="example">
+ENSP00000506251.1 pep chromosome:GRCh38:13:32316461:32400268:1 ge...  5347    0.0
+
+
+&gt;ENSP00000518983.1 pep chromosome:GRCh38:13:32315508:32400268:1
+gene:ENSG00000139618.19 transcript:ENST00000713680.1 gene_biotype:protein_coding
+transcript_biotype:protein_coding gene_symbol:BRCA2
+description:BRCA2 DNA repair associated [Source:HGNC
+Symbol;Acc:HGNC:1101]
+Length=3366
+
+ Score = 6961 bits (18060),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 3366/3366 (100%), Positives = 3366/3366 (100%), Gaps = 0/3366 (0%)
+
+Query  1     MPIGSKERPTFFEIFKTRCNKADLGPISLNWFEELSSEAPPYNSEPAEESEHKNNNYEPN  60
+             MPIGSKERPTFFEIFKTRCNKADLGPISLNWFEELSSEAPPYNSEPAEESEHKNNNYEPN
+Sbjct  1     MPIGSKERPTFFEIFKTRCNKADLGPISLNWFEELSSEAPPYNSEPAEESEHKNNNYEPN  60
+
+Query  61    LFKTPQRKPSYNQLASTPIIFKEQGLTLPLYQSPVKELDKFKLDLGRNVPNSRHKSLRTV  120
+             LFKTPQRKPSYNQLASTPIIFKEQGLTLPLYQSPVKELDKFKLDLGRNVPNSRHKSLRTV
+Sbjct  61    LFKTPQRKPSYNQLASTPIIFKEQGLTLPLYQSPVKELDKFKLDLGRNVPNSRHKSLRTV  120
+
+Query  121   KTKMDQADDVSCPLLNSCLSESPVVLQCTHVTPQRDKSVVCGSLFHTPKFVKGRQTPKHI  180
+             KTKMDQADDVSCPLLNSCLSESPVVLQCTHVTPQRDKSVVCGSLFHTPKFVKGRQTPKHI
+Sbjct  121   KTKMDQADDVSCPLLNSCLSESPVVLQCTHVTPQRDKSVVCGSLFHTPKFVKGRQTPKHI  180
+
+Query  181   SESLGAEVDPDMSWSSSLATPPTLSSTVLIVRNEEASETVFPHDTTANVKSYFSNHDESL  240
+             SESLGAEVDPDMSWSSSLATPPTLSSTVLIVRNEEASETVFPHDTTANVKSYFSNHDESL
+Sbjct  181   SESLGAEVDPDMSWSSSLATPPTLSSTVLIVRNEEASETVFPHDTTANVKSYFSNHDESL  240
+
+Query  241   KKNDRFIASVTDSENTNQREAASHGFGKTSGNSFKVNSCKDHIGKSMPNVLEDEVYETVV  300
+             KKNDRFIASVTDSENTNQREAASHGFGKTSGNSFKVNSCKDHIGKSMPNVLEDEVYETVV
+Sbjct  241   KKNDRFIASVTDSENTNQREAASHGFGKTSGNSFKVNSCKDHIGKSMPNVLEDEVYETVV  300
+
+Query  301   DTSEEDSFSLCFSKCRTKNLQKVRTSKTRKKIFHEANADECEKSKNQVKEKYSFVSEVEP  360
+             DTSEEDSFSLCFSKCRTKNLQKVRTSKTRKKIFHEANADECEKSKNQVKEKYSFVSEVEP
+</pre>
+</div>
+</li>
+
+
+<li><a id="org7055257"></a>Figure 2: BLASTp alignment for Nasalis larvatus<br />
+<div class="outline-text-5" id="text-1-5-6-2">
+<ul class="org-ul">
+<li>This figure shows the strongest BRCA2 protein hit found in Nasalis larvatus.
+The top alignment shows 91% identity across a long 3424-aa region with an E-value
+of 0.0, indicating a highly conserved BRCA2 homolog.</li>
+</ul>
+
+<pre class="example">
+&gt;KAL4838279.1 hypothetical protein H8958_006876 [Nasalis larvatus]
+Length=3426
+
+ Score = 6265 bits (16253),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 3110/3424 (91%), Positives = 3206/3424 (94%), Gaps = 62/3424 (2%)
+
+Query  1     MPIGSKERPTFFEIFKTRCNKADLGPISLNWFEELSSEAPPYNSEPAEESEHKNNNYEPN  60
+             M +GSKERPTFFEIFKT CNKADLGP+SLNWFEELSSEA PYNSEPAE+SEHKNNNYEPN
+Sbjct  1     MSVGSKERPTFFEIFKTCCNKADLGPVSLNWFEELSSEAAPYNSEPAEDSEHKNNNYEPN  60
+
+Query  61    LFKTPQRKPSYNQLASTPIIFKEQGLTLPLYQSPVKELDKFKLDLGRNVPNSRHKSLRTV  120
+             LFKTPQRKPSYNQLASTPIIFKEQGLTLPLYQSPVKELD F+LDLGRNV + RHKSLRTV
+Sbjct  61    LFKTPQRKPSYNQLASTPIIFKEQGLTLPLYQSPVKELDTFRLDLGRNVASRRHKSLRTV  120
+
+Query  121   KTKMDQADDVSCPLLNSCLSESPVVLQCTHVTPQRDKSVVCGSLFHTPKFVKGRQTPKHI  180
+             K +M QADDV+CPLLNSCLSESPVVLQCTHVTPQRDKSVVCGSLFHTPKFVKGRQTPKHI
+Sbjct  121   KAEMHQADDVTCPLLNSCLSESPVVLQCTHVTPQRDKSVVCGSLFHTPKFVKGRQTPKHI  180
+
+Query  181   SESLGAEVDPDMSWSSSLATPPTLSSTVLIVRNEEASETVFPHDTTANVKSYFSNHDESL  240
+             SESLGAEVDPDMSWSSSLATPPTLSSTVLIVRNEEASET+ PHDTTANVKSYFSN D+SL
+Sbjct  181   SESLGAEVDPDMSWSSSLATPPTLSSTVLIVRNEEASETLIPHDTTANVKSYFSNPDKSL  240
+
+Query  241   KKNDRFIASVTDSENTNQREAASHGFGKTSGNSFKVNSCKDHIGKSMPNVLEDEVYETVV  300
+             KKNDR I S+TDSENTNQREA SHGFGKT GNSFKVNSCKDHIGKSMPNVLEDEVYETVV
+Sbjct  241   KKNDRCIPSMTDSENTNQREATSHGFGKTLGNSFKVNSCKDHIGKSMPNVLEDEVYETVV  300
+
+Query  301   DTSEEDSFSLCFSKCRTKNLQKVRTSKTRKKIFHEANADECEKSKNQVKEKYSFVSEVEP  360
+             DTSEEDSFSLCFSKCRT NLQKVRTSKTRKKIFHEANADECEKSKNQVKEKYSFV E+E
+Sbjct  301   DTSEEDSFSLCFSKCRTGNLQKVRTSKTRKKIFHEANADECEKSKNQVKEKYSFVPEMES  360
+
+Query  361   NDTDPLDSNVANQKPFESGSDKISKEVVPSLACEWSQLTLSGLNGAQMEKIPLLHISSCD  420
+             +DTDPLDSNVANQKPFESGSDKISK+VVPSLACEWSQLTLSGLNG QMEKIP+LHISSCD
+Sbjct  361   SDTDPLDSNVANQKPFESGSDKISKDVVPSLACEWSQLTLSGLNGTQMEKIPVLHISSCD  420
+
+Query  421   QNISEKDLLDTENKRKKDFLTSENSLPRISSLPKSEKPLNEETVVNKRDEEQHLESHTDC  480
+</pre>
+</div>
+</li>
+
+<li><a id="orgd778cf6"></a>Figure 3: BLASTp alignment for Saguinus oedipus<br />
+<div class="outline-text-5" id="text-1-5-6-3">
+<ul class="org-ul">
+<li>This figure presents the best BRCA2-like alignment recovered from the Saguinus oedipus protein database.</li>
+</ul>
+<p>
+This hit corresponds to a 205–amino-acid fragment (Accession KAK2112680.1) that aligns to the human BRCA2
+protein with 87.3% identity and an E-value of 2e-113.
+</p>
+
+<pre class="example">
+&gt;KAK2112680.1 Breast cancer 2, early onset [Saguinus oedipus]
+Length=618
+
+ Score = 375 bits (964),  Expect = 2e-113, Method: Compositional matrix adjust.
+ Identities = 179/205 (87%), Positives = 187/205 (91%), Gaps = 0/205 (0%)
+
+Query  2337  TTKERQEIQNPNFTAPGQEFLSKSHLYEHLTLEKSSSNLAVSGHPFYQVSATRNEKMRHL  2396
+             TTKERQ+IQN NFTAPGQEFLSKSHLYE LTLEKSSS+LAVSG PFYQVSATR+EKMR L
+Sbjct  28    TTKERQKIQNLNFTAPGQEFLSKSHLYEQLTLEKSSSSLAVSGQPFYQVSATRHEKMRRL  87
+
+Query  2397  ITTGRPTKVFVPPFKTKSHFHRVEQCVRNINLEENRQKQNIDGHGSDDSKNKINDNEIHQ  2456
+             I  G+PTKVFVPPFKTKSHFHR EQCVRNINLEEN+QKQNIDGH S   KNKIND+EIHQ
+Sbjct  88    IAPGKPTKVFVPPFKTKSHFHRDEQCVRNINLEENKQKQNIDGHDSGGGKNKINDSEIHQ  147
+
+Query  2457  FNKNNSNQAVAVTFTKCEEEPLDLITSLQNARDIQDMRIKKKQRQRVFPQPGSLYLAKTS  2516
+             FNKNNSNQA  V FTKCEEEPLDLITSLQNARDIQDMRIKKKQRQ +FPQPGSLYL KTS
+Sbjct  148   FNKNNSNQAATVIFTKCEEEPLDLITSLQNARDIQDMRIKKKQRQCIFPQPGSLYLTKTS  207
+
+Query  2517  TLPRISLKAAVGGQVPSACSHKQLY  2541
+             TLPRISLKAAVG QVPSACSHKQ +
+Sbjct  208   TLPRISLKAAVGSQVPSACSHKQFW  232
+
+</pre>
+</div>
+</li>
+
+<li><a id="org238878c"></a>Figure 4: BLASTp alignment for Plecturocebus cupreus<br />
+<div class="outline-text-5" id="text-1-5-6-4">
+<ul class="org-ul">
+<li>No BRCA2 protein was found in Plecturocebus cupreus. This is most likely due
+to missing or incomplete protein annotation in this species’ dataset, not
+because the BRCA2 gene is truly absent.</li>
+</ul>
+
+<pre class="example">
+No Blastp aligment found
+</pre>
+</div>
+</li>
+
+<li><a id="org38c0596"></a>Figure 5: Transcript annotation from GTF files<br />
+<ol class="org-ol">
+<li><a id="org6c6a0bd"></a>Figure 5A.Homo sapiens- BRCA2 GFF Annotation<br />
+<div class="outline-text-6" id="text-1-5-6-5-1">
+<ul class="org-ul">
+<li>These lines show the gene and transcript entries for BRCA2 in human (chromosome 13).</li>
+</ul>
+<p>
+BRCA2 is annotated as ENSG00000139618, with multiple transcript isoforms.
+</p>
+<pre class="example">
+13   ensembl_havana  gene    32315086 32400268 . + . ID=gene:ENSG00000139618;Name=BRCA2;biotype=protein_coding
+13   havana  mRNA    32315086 32400268 . + . ID=transcript:ENST00000544455;Parent=gene:ENSG00000139618;Name=BRCA2-206;biotype=protein_coding
+13   havana  mRNA    32315496 32400264 . + . ID=transcript:ENST00000713677;Parent=gene:ENSG00000139618;Name=BRCA2-216;biotype=nonsense_mediated_decay
+
+</pre>
+</div>
+</li>
+
+<li><a id="org3dd6a52"></a>Figure 5B. Nasalis larvatus- BRCA2 GFF Annotation<br />
+<div class="outline-text-6" id="text-1-5-6-5-2">
+<ul class="org-ul">
+<li>These lines represent the CDS exons for the BRCA2-like protein KAL4838279.1 on scaffold CM106352.1.</li>
+</ul>
+<p>
+Each row corresponds to a coding exon fragment.
+</p>
+
+<pre class="example">
+CM106352.1  Genbank CDS 80007560 80007626 . + 0 ID=cds-KAL4838279.1;Parent=Nlar06878;protein_id=KAL4838279.1
+CM106352.1  Genbank CDS 80010176 80010424 . + 2 ID=cds-KAL4838279.1;Parent=Nlar06878;protein_id=KAL4838279.1
+CM106352.1  Genbank CDS 80017211 80017319 . + 2 ID=cds-KAL4838279.1;Parent=Nlar06878;protein_id=KAL4838279.1
+CM106352.1  Genbank CDS 80018235 80018284 . + 1 ID=cds-KAL4838279.1;Parent=Nlar06878;protein_id=KAL4838279.1
+CM106352.1  Genbank CDS 80018375 80018415 . + 2 ID=cds-KAL4838279.1;Parent=Nlar06878;protein_id=KAL4838279.1
+
+</pre>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org3e8edb2"></a>Figure 5C. Saguinus oedipus BRCA2 GFF annotation<br />
+<div class="outline-text-5" id="text-1-5-6-6">
+<ul class="org-ul">
+<li>These lines represent the CDS segments for KAK2112680.1, the BRCA2-like protein fragment in Saguinus.</li>
+</ul>
+<p>
+Located on scaffold CM063173.1.
+</p>
+
+<pre class="example">
+CM063173.1  Genbank CDS 163213827 163213906 . + 0 ID=cds-KAK2112680.1;Parent=FUN_012427-T1_mrna;protein_id=KAK2112680.1
+CM063173.1  Genbank CDS 163214238 163214665 . + 1 ID=cds-KAK2112680.1;Parent=FUN_012427-T1_mrna;protein_id=KAK2112680.1
+CM063173.1  Genbank CDS 163214993 163215174 . + 2 ID=cds-KAK2112680.1;Parent=FUN_012427-T1_mrna;protein_id=KAK2112680.1
+
+</pre>
+</div>
+</li>
+
+<li><a id="org6c7a559"></a>Figure 6: Genomic mapping using BLASTN in IGV<br />
+<div class="outline-text-5" id="text-1-5-6-7">
+<ul class="org-ul">
+<li>This figure shows the genomic localization of the BRCA2 CDS in each species using BLASTn alignment results visualized in IGV.
+The BRCA2 CDS extracted from the transcript was aligned back to the species genome, and the resulting BED tracks were loaded into IGV.</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org6e6218a"></a>Figure 06A<br />
+<div class="outline-text-6" id="text-1-5-6-7-1">
+<p>
++<a href="../FinalReportData/IGV_Run12_Homo sapiens_BRCA2_CDS_alignment (chromosome 13).png">Figure 06A — Homo sapiens IGV View</a>
+The figure above shows that the  CDS sequence of the human BRCA2 transcript (ENST00000713680.1) was aligned to the Homo sapiens chromosome 13 genome using BLASTN.
+IGV visualization shows a single, strong full-length hit mapped to:
+</p>
+
+<ul class="org-ul">
+<li><b>Chromosome:</b> 13</li>
+<li><b>Coordinates:</b> 32,315,401 – 32,316,520</li>
+<li><b>Identity:</b> 100%</li>
+<li><b>E-value:</b> 0.0</li>
+</ul>
+
+<p>
+This confirms that the extracted CDS corresponds precisely to the annotated BRCA2 gene region in the human genome.
+</p>
+</div>
+</li>
+
+<li><a id="org5afc41d"></a>Figure 06B<br />
+<div class="outline-text-6" id="text-1-5-6-7-2">
+<p>
++<a href="../FinalReportData/IGV_Run12_Nasalis_larvatus_BRCA2_CDS_alignment (scaffold CM106352.1).png">Figure 06B — Nasalis IGV View</a>
+The figure above shows that the  BRCA2-like CDS from Nasalis larvatus (KAL4838279.1) aligned to scaffold CM106352.1.
+IGV visualization shows multiple distinct alignment blocks, each representing one exon, spread across the scaffold.
+</p>
+
+<p>
+This pattern matches the multi-exon structure seen in the GFF file, confirming that the BRCA2 ortholog spans a long region on this scaffold.
+</p>
+
+<ul class="org-ul">
+<li><b>Scaffold:</b> CM106352.1</li>
+<li><b>Result:</b> Multiple exon-level alignments (consistent with ~25 CDS fragments in GFF)</li>
+<li><b>Identity:</b> Very high</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org0a0fbe1"></a>Figure 06C<br />
+<div class="outline-text-6" id="text-1-5-6-7-3">
+<p>
++<a href="../FinalReportData/IGV_RUN12_Saguinus_oedipus _BRCA2 CDS alignment( scaffold CM063173.1).png">Figure 06C — Saguinus IGV View</a>
+The Saguinus oedipus BRCA2-like CDS (KAK2112680.1) produced shorter but clear alignment blocks on scaffold CM063173.1. These alignments correspond to partial BRCA2 regions, consistent with the shorter BLASTP fragment recovered earlier.
+</p>
+
+<ul class="org-ul">
+<li><b>Scaffold:</b> CM063173.1</li>
+<li><b>Result:</b> Only a few partial CDS alignments.</li>
+<li><b>Interpretation:</b> BRCA2 region appears incompletely represented or fragmented in this genome assembly.</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org095b4c5" class="outline-3">
+<h3 id="org095b4c5"><span class="section-number-3">1.6</span> Script 01</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-org5396d71" class="outline-4">
+<h4 id="org5396d71"><span class="section-number-4">1.6.1</span> Making BLASTp databases</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<pre class="example">
+makeblastdb \
+-dbtype prot \
+-in Homo_sapiens.GRCh38.pep.all.fa \
+-input_type fasta \
+-title Homo_sapiens.GRCh38.pep.all.fa_db \
+-out Homo_sapiens.GRCh38.pep.all.fa_db
+
+makeblastdb \
+-dbtype prot \
+-in Nasalis_larvatus_protein.faa \
+-input_type fasta \
+-title Nasalis_larvatus_protein.fa_db \
+-out Nasalis_larvatus_protein.fa_db
+
+makeblastdb \
+-dbtype prot \
+-in Saguinus_oedipus_protein.faa \
+-input_type fasta \
+-title Saguinus_oedipus_protein.fa_db \
+-out Saguinus_oedipus_protein.fa_db
+
+makeblastdb \
+-dbtype prot \
+-in Plecturocebus_cupreus_protein.faa \
+-input_type fasta \
+-title Plecturocebus_cupreus_protein.fa_db \
+-out Plecturocebus_cupreus_protein.fa_db
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0f7873a" class="outline-3">
+<h3 id="org0f7873a"><span class="section-number-3">1.7</span> Script 02</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+<div id="outline-container-org42b6b65" class="outline-4">
+<h4 id="org42b6b65"><span class="section-number-4">1.7.1</span> Run BLASTP with the Evalues</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<pre class="example">
+#!/usr/bin/env bash
+## Defining variables:
+query_dir="../01_Genome_Files.dir"
+query="ENSP00000518983.1.fa"
+
+db_dir="../02_Databases.dir"
+
+db_01="01_Homo_sapiens_DB/Homo_sapiens.GRCh38.pep.all.fa_db"
+db_02="02_Nasalis_larvatus_DB/Nasalis_larvatus_protein.fa_db"
+db_03="03_Saguinus_oedipus_DB/Saguinus_oedipus_protein.fa_db"
+db_04="04_Plecturocebus_cupreus_DB/Plecturocebus_cupreus_protein.fa_db"
+
+db="$db_01 $db_02 $db_03 $db_04"
+
+out_dir="../11_BlastP_Primates_Results.dir"
+
+task="blastp"
+run_number="11"
+evalue="1e-001 1e-010 1e-050 1e-100 1e-200 1e-300"
+outfmt="6"
+num_threads="6"
+
+&gt; ${run_number}_Script${run_number}_Primates_Commands.sh
+
+for d in $db; do
+  for e in $evalue; do
+    for o in $outfmt; do
+      echo "blastp \
+  -query ${query_dir}/${query} \
+  -db ${db_dir}/${d} \
+  -out ${out_dir}/blastp_Run_${run_number}_${query}_vs_$(basename ${d})_${e}_${o}.txt \
+  -evalue ${e} \
+  -outfmt ${o} \
+  -num_threads ${num_threads}" \
+      &gt;&gt; ${run_number}_Script${run_number}_Primates_Commands.sh
+    done
+  done
+done
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0367bcf" class="outline-4">
+<h4 id="org0367bcf"><span class="section-number-4">1.7.2</span> Databases used</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<pre class="example">
+Query:
+  ENSP00000518983.1.fa  (Human BRCA2 protein)
+
+Protein Databases:
+  01_Homo_sapiens_DB/Homo_sapiens.GRCh38.pep.all.fa_db
+  02_Nasalis_larvatus_DB/Nasalis_larvatus_protein.fa_db
+  03_Saguinus_oedipus_DB/Saguinus_oedipus_protein.fa_db
+  04_Plecturocebus_cupreus_DB/Plecturocebus_cupreus_protein.fa_db
+
+Output:
+  BLASTp database folders in 02_Databases.dir/
+  11_BlastP_Primates_Results.dir
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3823d6a" class="outline-3">
+<h3 id="org3823d6a"><span class="section-number-3">1.8</span> Script 3</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-orgb43b040" class="outline-4">
+<h4 id="orgb43b040"><span class="section-number-4">1.8.1</span> Run BLASTN for CDS analysis</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<pre class="example">
+#!/usr/bin/env bash
+## Defining variables
+query_dir="../01_Genome_Files.dir/BRCA2_Primates_CDS.dir"
+
+query=(
+"BRCA2_Homo_ENSP00000518983.1_cds.fa"
+"BRCA2_Nasalis_KAL4838279.1_cds.fa"
+"BRCA2_Saguinus_KAK2112680.1_cds.fa"
+)
+
+db_dir="../02_Databases.dir"
+
+db_01="01_Homo_sapiens_DB/Homo_sapiens_chr13_db"
+db_02="02_Nasalis_larvatus_DB/Nasalis_larvatus_genome.fa_db"
+db_03="03_Saguinus_oedipus_DB/Saguinus_oedipus_genome.fa_db"
+
+db=( "${db_01}" "${db_02}" "${db_03}" )
+
+out_dir="../12_BlastN_Primates_Results.dir"
+task=( "blastn" )
+run_number="12"
+evalue=( "1e-001" )
+outfmt=( "6" )
+num_threads="6"
+
+&gt; ${run_number}_Script${run_number}_Commands.sh
+
+i=0
+
+## culling_limit 1
+for d in ${db[@]}; do
+  for q in ${query[@]}; do
+    for t in ${task[@]}; do
+      for e in ${evalue[@]}; do
+	for o in ${outfmt[@]}; do
+	  i=$((i+1)); printf -v idx '%02d' "$i"
+	  echo -e \
+"blastn \
+-query ${query_dir}/${q} \
+-strand both \
+-task ${t} \
+-db ${db_dir}/${d} \
+-out ${out_dir}/${idx}A_Run_${run_number}_${t}_${q}_vs_${d}_evalue_${e}_climit1_outfmt_${o}.txt \
+-evalue ${e} \
+-outfmt ${o} \
+-culling_limit 1 \
+-num_threads ${num_threads}" &gt;&gt; ${run_number}_Script${run_number}_Commands.sh
+	done
+      done
+    done
+  done
+done
+
+##subject_besthit
+for d in ${db[@]}; do
+  for q in ${query[@]}; do
+    for t in ${task[@]}; do
+      for e in ${evalue[@]}; do
+	for o in ${outfmt[@]}; do
+	  i=$((i+1)); printf -v idx '%02d' "$i"
+	  echo -e \
+"blastn \
+-query ${query_dir}/${q} \
+-strand both \
+-task ${t} \
+-db ${db_dir}/${d} \
+-out ${out_dir}/${idx}B_Run_${run_number}_${t}_${q}_vs_${d}_evalue_${e}_subjectbesthit_outfmt_${o}.txt \
+-evalue ${e} \
+-outfmt ${o} \
+-subject_besthit \
+-num_threads ${num_threads}" &gt;&gt; ${run_number}_Script${run_number}_Commands.sh
+	done
+      done
+    done
+  done
+done
+
+##culling_limit 1 + subject_besthit
+for d in ${db[@]}; do
+  for q in ${query[@]}; do
+    for t in ${task[@]}; do
+      for e in ${evalue[@]}; do
+	for o in ${outfmt[@]}; do
+	  i=$((i+1)); printf -v idx '%02d' "$i"
+	  echo -e \
+"blastn \
+-query ${query_dir}/${q} \
+-strand both \
+-task ${t} \
+-db ${db_dir}/${d} \
+-out ${out_dir}/${idx}C_Run_${run_number}_${t}_${q}_vs_${d}_evalue_${e}_climit1_subjectbesthit_outfmt_${o}.txt \
+-evalue ${e} \
+-outfmt ${o} \
+-culling_limit 1 \
+-subject_besthit \
+-num_threads ${num_threads}" &gt;&gt; ${run_number}_Script${run_number}_Commands.sh
+	done
+      done
+    done
+  done
+done
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc6a924b" class="outline-4">
+<h4 id="orgc6a924b"><span class="section-number-4">1.8.2</span> Databases used</h4>
+<div class="outline-text-4" id="text-1-8-2">
+<pre class="example">
+Query (BRAC2 CDS FASTA Files) 
+- BRCA2_Homo_ENSP00000518983.1_cds.fa
+- BRCA2_Nasalis_KAL4838279.1_cds.fa
+- BRCA2_Saguinus_KAK2112680.1_cds.fa
+
+Genome Databases (BLASTN)
+- 01_Homo_sapiens_DB/Homo_sapiens_chr13_db  
+- 02_Nasalis_larvatus_DB/Nasalis_larvatus_genome.fa_db  
+- 03_Saguinus_oedipus_DB/Saguinus_oedipus_genome.fa_db
+
+Output: 12_BlastN_Primates_Results.dir (BLASTn results)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcc0bb97" class="outline-3">
+<h3 id="orgcc0bb97"><span class="section-number-3">1.9</span> Discussion</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+The main goal of this project was to identify BRCA2 homologs across four primate species and compare how similar they
+are at the protein level, how complete their CDS regions are, and how their BRCA2 gene is organized in the genome. 
+From the BLASTp search, strong BRCA2-like proteins were recovered in Homo sapiens, Nasalis larvatus, and Saguinus oedipus. 
+However, no BRCA2 protein was detected in Plecturocebus cupreus, which is most likely due to missing or incomplete annotations 
+rather than the actual absence of the gene. This is a common issue with non-model genomes that may still have gaps or incomplete protein predictions (Lewin et al. 2018).
+Across the species, the amount of BRCA2 conservation varied noticeably. Nasalis larvatus had a highly conserved BRCA2 protein (~91% identity) 
+and the alignment covered almost the entire protein, showing that BRCA2 is well preserved in this species. On the other hand, Saguinus oedipus 
+only had short BRCA2-like fragments (~87% identity over 205 amino acids). This likely reflects gaps in the genome assembly or fragmented protein
+prediction rather than true biological differences. Large genes like BRCA2, which contains many exons and spans more than 10 kb, are especially 
+sensitive to incomplete genome assemblies (Roy et al. 2023).The CDS extraction and GFF annotation results support this pattern. In humans and 
+Nasalis larvatus, the CDS regions were complete and showed the expected multi-exon structure of BRCA2. Saguinus oedipus only had partial CDS segments, 
+again pointing toward incomplete annotation. IGV visualization also matched these findings: humans showed a full-length BRCA2 region, Nasalis showed 
+many clean exon hits along the scaffold, and Saguinus displayed fragmented alignments. Together, these results highlight how important genome quality 
+is when identifying and comparing genes across species.Overall, this project demonstrates how BLAST-based comparative genomics can help reveal evolutionary 
+patterns, annotation completeness, and how genes like BRCA2 are structured in different primates.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgec6efc6" class="outline-3">
+<h3 id="orgec6efc6"><span class="section-number-3">1.10</span> Conclusions</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+This project successfully identified and compared BRCA2 homologs across four primate species using BLAST-based protein, CDS, and genomic analyses. 
+The results showed that BRCA2 is highly conserved in Homo sapiens and Nasalis larvatus, with both species containing complete and well-annotated 
+versions of the gene. In contrast, Saguinus oedipus only showed partial BRCA2 sequences, and Plecturocebus cupreus did not show any detectable BRCA2 protein. 
+These outcomes strongly suggest that the missing or fragmented BRCA2 regions are due to incomplete genome annotation rather than true evolutionary loss.
+The combined BLASTp, CDS extraction, and IGV visualization steps helped confirm gene structure and highlight differences in genome assembly quality among species. 
+</p>
+
+<p>
+Overall, this work showed how comparative genomics can be used to trace essential genes like BRCA2 across related species, and it reinforces the importance 
+of high-quality genomic resources for accurate gene identification. As more complete primate genomes become available, future work could refine these findings and 
+better resolve BRCA2 evolution across the primate lineage.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3bbb324" class="outline-3">
+<h3 id="org3bbb324"><span class="section-number-3">1.11</span> References</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+Lewin, H. A., Robinson, G. E., Kress, W. J., Baker, W. J., Coddington, J., Crandall, K. A., Durbin, R., Edwards, S. V., Forest, F., Gilbert, M. T. P., Goldstein, M. M., Grigoriev, I. V., 
+Hackett, K. J., Haussler, D., Jarvis, E. D., Johnson, W. E., Patrinos, A., Richards, S., Castilla-Rubio, J. C., van Sluys, M.-A., Soltis, P. S., Xu, X., Yang, H., &amp; Zhang, G. (2018).
+Earth BioGenome Project: Sequencing life for the future of life.Proceedings of the National Academy of Sciences, 115(17):4325–4333. doi: <a href="https://doi.org/10.1073/pnas.1720115115">https://doi.org/10.1073/pnas.1720115115</a>
+</p>
+
+
+<p>
+Roy, S., Schreiber, M., and Lyons, E. (2023). Improving gene annotation in fragmented genomes using comparative genomics. Genome Biology. pp 24, 112. doi: <a href="https://doi.org/10.1186/s13059-023-02916-8">https://doi.org/10.1186/s13059-023-02916-8</a>
+</p>
+
+
+<p>
+Zhang, J., Wang, X., and Yu, J. (2011). BRCA2 and the maintenance of genome stability. Nucleic Acids Research, 39(2), 597–605. doi: <a href="https://doi.org/10.1093/nar/gkq888">https://doi.org/10.1093/nar/gkq888</a>
+</p>
+
+
+<p>
+Kowalczyk, A., Partha, R., and Clark, N. L. (2020). Strong evolutionary constraint on mammalian BRCA2. Molecular Biology and Evolution, 37(10), 3027–3043. doi: <a href="https://doi.org/10.1093/molbev/msaa158">https://doi.org/10.1093/molbev/msaa158</a>
+</p>
+
+
+<p>
+Chen, X., Zhang, Y., and Wang, X. (2017). Comparative genomics of primates reveals the evolutionary history of key DNA repair genes. Genome Research, 27(6), 924–934. doi: <a href="https://doi.org/10.1101/gr.210211.116">https://doi.org/10.1101/gr.210211.116</a>
+</p>
+
+
+<p>
+Venkitaraman, A. R. (2002). Cancer susceptibility and the functions of BRCA1 and BRCA2. Cell, 108(2), 171–182. doi: <a href="https://doi.org/10.1016/S0092-8674(02)">https://doi.org/10.1016/S0092-8674(02)</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Tripathi Subina</p>
+<p class="date">Created: 2025-12-06 Sat 22:16</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
